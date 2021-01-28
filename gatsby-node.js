@@ -1,4 +1,4 @@
-const path = require(`path`)
+let path = require(`path`)
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
