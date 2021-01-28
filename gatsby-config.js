@@ -1,14 +1,14 @@
 const path = require('path')
 
 require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`
+  path: `.env.${process.env.NODE_ENV}`,
 })
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Shopify Starter`,
-    description: `Kick off your next, ecommerce experience with this Gatsby starter. This starter ships with credentials to a shopify demo store so you can try it out immediately.`,
-    author: `@alexanderhorl`,
+    title: `Omission Project`,
+    description: `Through the medium of clothing, we aim to put garments in conversation with media ecology; bringing awareness to media literacy and the contemporary conditions of the digital landscape.`,
+    author: `@diresh-shrestha`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -22,6 +22,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-layout`,
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -31,7 +32,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/OMISSION_logo.png`, // This path is relative to the root of the site.
       },
     },
     {
@@ -66,7 +67,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-134421805-1",
+        trackingId: process.env.GTAG,
         anonymize: true,
         respectDNT: true,
       },

@@ -10,7 +10,7 @@ import Navigation from '~/components/Navigation'
 
 const Wrapper = styled.div`
   margin: 0 auto;
-  max-width: 960px;
+  max-width: 1100px;
   padding: 0px 1.0875rem 1.45rem;
 `
 
@@ -33,11 +33,7 @@ const Layout = ({ children }) => {
             <Navigation siteTitle={data.site.siteMetadata.title} />
             <Wrapper>
               {children}
-              <footer>
-                © {new Date().getFullYear()}, Built with
-                {` `}
-                <a href="https://www.gatsbyjs.org">Gatsby</a>
-              </footer>
+              <footer>© {new Date().getFullYear()} Omission Project</footer>
             </Wrapper>
           </>
         )}

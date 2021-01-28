@@ -1,26 +1,30 @@
-import styled from '@emotion/styled'
+import styled from 'styled-components'
 import { Link } from 'gatsby'
 
 import { breakpoints } from '../../utils/styles'
 
 export const Wrapper = styled.div`
-  background: rebeccapurple;
+  background: white;
   margin-bottom: 1.45rem;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  top: 0;
 `
 
 export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  padding: 1.45rem;
+  padding: 1rem 2rem;
   margin: 0 auto;
-  max-width: 960px;
+  max-width: 1100px;
 `
 
 export const MenuLink = styled(Link)`
-  color: white;
+  color: black;
   text-decoration: none;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
 
   @media (max-width: ${breakpoints.s}px) {
@@ -30,10 +34,10 @@ export const MenuLink = styled(Link)`
 
 export const CartCounter = styled.span`
   background-color: white;
-  color: #663399;
+  color: black;
   border-radius: 20px;
-  padding: 0 10px;
-  font-size: 1.2rem;
+  padding: 0 5px;
+  font-size: 1rem;
   float: right;
   margin: -10px;
   z-index: 20;
