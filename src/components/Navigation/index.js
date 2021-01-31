@@ -6,6 +6,7 @@ import StoreContext from '~/context/StoreContext'
 import Logo from '../Logo/index'
 import { CartCounter, Container, MenuLink, Wrapper } from './styles'
 import { Cart } from '../Icons/Cart'
+import NavItems from '../NavItems/index'
 
 const useQuantity = () => {
   const {
@@ -25,6 +26,8 @@ const Navigation = () => {
         <MenuLink to="/">
           <Logo />
         </MenuLink>
+        <NavItems />
+
         <MenuLink to="/cart">
           {hasItems && <CartCounter>{quantity}</CartCounter>}
           <Cart />
