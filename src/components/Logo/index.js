@@ -1,11 +1,11 @@
 import React from 'react'
-import { Container, Dots, Name } from './styles'
+import { Container, LogoImg } from './styles'
+import MainLogo from './OMMISION_LOGO.png'
 
 export default function Logo() {
   return (
     <Container>
-      <Dots />
-      <Name>OMISSION</Name>
+      <LogoImg src={MainLogo} alt="" />
     </Container>
   )
 }
