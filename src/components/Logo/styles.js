@@ -5,5 +5,5 @@ export const Container = styled.div``
 
 export const LogoImg = styled.img`
   height: 60px;
-  width: 60px;
+  width: 80px;
 `
