@@ -4,6 +4,7 @@ import { breakpoints } from '../../utils/styles'
 
 export const Grid = styled.div`
   margin-top: 8rem;
+  margin-bottom: 5rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 5rem 2.5rem;
