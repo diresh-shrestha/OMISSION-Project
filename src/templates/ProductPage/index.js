@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { graphql } from 'gatsby'
+
+import ReactCardFlip from 'react-card-flip'
 
 import SEO from '~/components/seo'
 import ProductForm from '~/components/ProductForm'
@@ -10,9 +12,17 @@ import {
   GridLeft,
   GridRight,
 } from '~/utils/styles'
-import { ProductTitle, ProductDescription } from './styles'
+import {
+  ProductTitle,
+  ProductDescription,
+  ButtonContainer,
+  Button,
+  StyledImg,
+} from './styles'
 
 const ProductPage = ({ data }) => {
+  const [isFlipped, setIsFlipped] = useState(false)
+
   const product = data.shopifyProduct
   return (
     <>
@@ -20,13 +30,24 @@ const ProductPage = ({ data }) => {
       <Container>
         <TwoColumnGrid>
           <GridLeft>
-            {product.images.map(image => (
-              <Img
-                fluid={image.localFile.childImageSharp.fluid}
-                key={image.id}
+            <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
+              <StyledImg
+                key="front"
+                fluid={product.images[0].localFile.childImageSharp.fluid}
                 alt={product.title}
               />
-            ))}
+
+              <StyledImg
+                key="back"
+                fluid={product.images[1].localFile.childImageSharp.fluid}
+                alt={product.title}
+              />
+            </ReactCardFlip>
+            <ButtonContainer>
+              <Button onClick={() => setIsFlipped(state => !state)}>
+                <p>See back</p>
+              </Button>
+            </ButtonContainer>
           </GridLeft>
           <GridRight>
             <ProductTitle>{product.title}</ProductTitle>
