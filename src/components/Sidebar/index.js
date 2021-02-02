@@ -9,7 +9,7 @@ const Sidebar = ({ open, setOpen }) => {
         <StyledUl>
           {MenuItems.map(item => {
             return (
-              <StyledLink to={item.url}>
+              <StyledLink onClick={() => setOpen(!open)} to={item.url}>
                 <ListItems>{item.title}</ListItems>
               </StyledLink>
             )
