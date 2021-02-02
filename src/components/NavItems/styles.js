@@ -10,6 +10,9 @@ export const ListItems = styled.li`
 export const ListWrapper = styled.ul`
   float: left;
   margin: auto 0;
+  @media (max-width: 769px) {
+    display: none;
+  }
 `
 
 export const PageLink = styled(Link)`

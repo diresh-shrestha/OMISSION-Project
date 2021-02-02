@@ -6,7 +6,7 @@ import { breakpoints } from '../../utils/styles'
 export const Wrapper = styled.div`
   margin-bottom: 1.45rem;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   width: 100%;
   top: 0;
 `
@@ -16,11 +16,10 @@ export const Container = styled.div`
 
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
   padding: 1rem 2rem;
   margin: 0 auto;
   max-width: 1500px;
-  height: 60px;
 `
 
 export const MenuLink = styled(Link)`
@@ -44,4 +43,10 @@ export const CartCounter = styled.span`
   float: right;
   margin: -10px;
   z-index: 20;
+`
+
+export const SidebarContainer = styled.div`
+  @media (min-width: ${breakpoints.m}px) {
+    display: none;
+  }
 `

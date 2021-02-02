@@ -41,10 +41,4 @@ export const Button = styled.button`
   }
 `
 
-export const StyledImg = styled(Img)`
-  &:hover {
-    transform: scale(1.2);
-  }
-
-  transition: transform 0.5s;
-`
+export const StyledImg = styled(Img)``
