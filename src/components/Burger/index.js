@@ -6,7 +6,6 @@ const Burger = ({ open, setOpen }) => {
     <MenuButton open={open} onClick={() => setOpen(!open)}>
       <div />
       <div />
-      <div />
     </MenuButton>
   )
 }

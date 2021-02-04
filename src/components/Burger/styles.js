@@ -6,8 +6,8 @@ export const MenuButton = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 2rem;
-  height: 2rem;
+  width: 2.5rem;
+  height: 1.5rem;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -21,23 +21,24 @@ export const MenuButton = styled.div`
   div {
     z-index: 20;
     width: 2rem;
-    height: 0.25rem;
+    height: 0.15rem;
     background: ${({ open }) => (open ? 'white' : 'black')};
     border-radius: 10px;
     transition: all 0.3s linear;
     position: relative;
-    transform-origin: 1px;
+    transform-origin: 7px;
 
     :first-child {
       transform: ${({ open }) => (open ? 'rotate(45deg)' : 'rotate(0)')};
     }
 
-    :nth-child(2) {
-      opacity: ${({ open }) => (open ? '0' : '1')};
-      transform: ${({ open }) => (open ? 'translateX(20px)' : 'translateX(0)')};
-    }
+    // :nth-child(2) {
+    //   opacity: ${({ open }) => (open ? '0' : '1')};
+    //   transform: ${({ open }) =>
+      open ? 'translateX(20px)' : 'translateX(0)'};
+    // }
 
-    :nth-child(3) {
+    :nth-child(2) {
       transform: ${({ open }) => (open ? 'rotate(-45deg)' : 'rotate(0)')};
     }
   }
