@@ -20,6 +20,17 @@ export const ProductDescription = styled.div`
   width: auto;
   height: 500px;
   overflow: auto;
+  img {
+    @media (max-width: 530px) {
+      width: 400px;
+    }
+    @media (max-width: 425px) {
+      width: 300px;
+    }
+    @media (max-width: 425px) {
+      width: 250px;
+    }
+  }
 `
 export const ButtonContainer = styled.div`
   display: flex;

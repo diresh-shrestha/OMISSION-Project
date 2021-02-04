@@ -45,7 +45,7 @@ const ProductPage = ({ data }) => {
             </ReactCardFlip>
             <ButtonContainer>
               <Button onClick={() => setIsFlipped(state => !state)}>
-                <p>See back</p>
+                <p>SEE BACK</p>
               </Button>
             </ButtonContainer>
           </GridLeft>
