@@ -19,7 +19,7 @@ export const Container = styled.div`
   align-items: center;
   padding: 1rem 2rem;
   margin: 0 auto;
-  max-width: 1500px;
+  max-width: 1800px;
 `
 
 export const MenuLink = styled(Link)`
