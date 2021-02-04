@@ -42,6 +42,7 @@ export const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
   margin: 1rem;
+  margin-bottom: 4rem;
 `
 
 export const Button = styled.button`
