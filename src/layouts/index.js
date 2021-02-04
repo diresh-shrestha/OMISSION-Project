@@ -15,6 +15,11 @@ const Wrapper = styled.div`
   padding: 0px 1.0875rem 1.45rem;
 `
 
+const FooterWrapper = styled.div`
+  margin: 0 auto;
+  max-width: 1500px;
+`
+
 const Layout = ({ children }) => {
   return (
     <ContextProvider>
@@ -34,8 +39,10 @@ const Layout = ({ children }) => {
             <Navigation siteTitle={data.site.siteMetadata.title} />
             <Wrapper>
               <main>{children}</main>
-              <Footer />
             </Wrapper>
+            <FooterWrapper>
+              <Footer />
+            </FooterWrapper>
           </>
         )}
       />
