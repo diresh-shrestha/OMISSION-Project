@@ -52,7 +52,6 @@ export const Button = styled.button`
   text-align: center;
   line-height: inherit;
   text-decoration: none;
-  padding: 8px 16px;
   box-sizing: border-box;
   font-family: 'Work Sans', system-ui, sans-serif;
   font-size: 16px;
