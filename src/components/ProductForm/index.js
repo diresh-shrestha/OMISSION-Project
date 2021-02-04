@@ -3,6 +3,17 @@ import find from 'lodash/find'
 import isEqual from 'lodash/isEqual'
 import PropTypes from 'prop-types'
 
+import {
+  Select,
+  SelectContainer,
+  Button,
+  ButtonContainer,
+  CounterContainer,
+  StyledLabel,
+} from './styles'
+import ChevronDown from '../Icons/ChevronDown'
+import ProductQuantity from '../ProductQuantity/index'
+
 import StoreContext from '~/context/StoreContext'
 
 const ProductForm = ({ product }) => {
@@ -44,6 +55,14 @@ const ProductForm = ({ product }) => {
 
   const handleQuantityChange = ({ target }) => {
     setQuantity(target.value)
+  }
+
+  function increaseAmount() {
+    setQuantity(a => a + 1)
+  }
+
+  function decreaseAmount() {
+    setQuantity(a => (a <= 1 ? 1 : a - 1))
   }
 
   const handleOptionChange = (optionIndex, { target }) => {
@@ -98,29 +117,42 @@ const ProductForm = ({ product }) => {
   return (
     <>
       <h3>{price}</h3>
+
       {options.map(({ id, name, values }, index) => (
         <React.Fragment key={id}>
-          <label htmlFor={name}>{name} </label>
-          <select
-            name={name}
-            key={id}
-            onChange={event => handleOptionChange(index, event)}
-          >
-            {values.map(value => (
-              <option
-                value={value}
-                key={`${name}-${value}`}
-                disabled={checkDisabled(name, value)}
-              >
-                {value}
-              </option>
-            ))}
-          </select>
+          <StyledLabel htmlFor={name}>{name} </StyledLabel>
+          <SelectContainer>
+            <Select
+              name={name}
+              key={id}
+              onChange={event => handleOptionChange(index, event)}
+            >
+              {values.map(value => (
+                <option
+                  value={value}
+                  key={`${name}-${value}`}
+                  disabled={checkDisabled(name, value)}
+                >
+                  {value}
+                </option>
+              ))}
+            </Select>
+            <ChevronDown />
+          </SelectContainer>
+
           <br />
         </React.Fragment>
       ))}
-      <label htmlFor="quantity">Quantity </label>
-      <input
+      <CounterContainer>
+        <StyledLabel htmlFor="quantity">Quantity </StyledLabel>
+        <ProductQuantity
+          increaseAmount={increaseAmount}
+          decreaseAmount={decreaseAmount}
+          currentAmount={quantity}
+        />
+      </CounterContainer>
+
+      {/* <input
         type="number"
         id="quantity"
         name="quantity"
@@ -128,15 +160,18 @@ const ProductForm = ({ product }) => {
         step="1"
         onChange={handleQuantityChange}
         value={quantity}
-      />
+      /> */}
       <br />
-      <button
-        type="submit"
-        disabled={!available || adding}
-        onClick={handleAddToCart}
-      >
-        Add to Cart
-      </button>
+      <ButtonContainer>
+        <Button
+          type="submit"
+          disabled={!available || adding}
+          onClick={handleAddToCart}
+        >
+          Add to Cart
+        </Button>
+      </ButtonContainer>
+
       {!available && <p>This Product is out of Stock!</p>}
     </>
   )

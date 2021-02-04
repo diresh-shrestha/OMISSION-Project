@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import Img from 'gatsby-image'
+import { breakpoints } from '../../utils/styles'
 
 export const ProductTitle = styled.h1`
   font-size: 2.25rem;
@@ -18,8 +19,13 @@ export const ProductDescription = styled.div`
   padding: 1rem;
   margin: 2rem auto;
   width: auto;
-  height: 500px;
+  height: 700px;
   overflow: auto;
+
+  @media (max-width: ${breakpoints.m}px) {
+    overflow: none;
+    height: auto;
+  }
   img {
     @media (max-width: 530px) {
       width: 400px;
@@ -39,16 +45,29 @@ export const ButtonContainer = styled.div`
 `
 
 export const Button = styled.button`
-  display: flex;
-  background: black;
-
+  min-width: 0px;
+  width: 150px;
+  appearance: none;
+  display: inline-block;
+  text-align: center;
+  line-height: inherit;
+  text-decoration: none;
+  padding: 8px 16px;
+  box-sizing: border-box;
+  font-family: 'Work Sans', system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  background-color: #333;
+  transition: all 0.3s ease 0s;
+  border-radius: 4px;
+  border-width: 1px;
+  border-style: solid;
+  border-image: initial;
+  border-color: #333;
   &:hover {
-    background: #121212;
-  }
-  transition: background 0.5s;
-  p {
-    color: white;
-    margin: 0.5rem;
+    background-color: transparent;
+    color: #333;
   }
 `
 
