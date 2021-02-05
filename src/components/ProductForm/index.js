@@ -165,7 +165,7 @@ const ProductForm = ({ product }) => {
       <ButtonContainer>
         <Button
           type="submit"
-          disabled={!available || adding}
+          // disabled={!available || adding}
           onClick={handleAddToCart}
         >
           Add to Cart
