@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container } from '../utils/styles'
+import 'normalize.css'
 
 const About = () => {
   return (

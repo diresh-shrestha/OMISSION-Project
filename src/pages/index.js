@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import 'normalize.css'
 
 import SEO from '~/components/seo'
 import ProductGrid from '~/components/ProductGrid'

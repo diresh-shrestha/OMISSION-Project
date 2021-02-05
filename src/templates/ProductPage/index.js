@@ -19,6 +19,7 @@ import {
   Button,
   StyledImg,
 } from './styles'
+import 'normalize.css'
 
 const ProductPage = ({ data }) => {
   const [isFlipped, setIsFlipped] = useState(false)
@@ -52,6 +53,7 @@ const ProductPage = ({ data }) => {
           <GridRight>
             <ProductTitle>{product.title}</ProductTitle>
             <ProductForm product={product} />
+
             <ProductDescription
               dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
             />
