@@ -69,4 +69,5 @@ export const ImageContainer = styled.div`
 
 export const RemoveContainer = styled.div`
   cursor: pointer;
+  margin: 0 auto;
 `
