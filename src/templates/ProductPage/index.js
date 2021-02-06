@@ -87,8 +87,8 @@ const ProductPage = ({ data }) => {
                   },
                   largeImage: {
                     src: product.images[1].originalSrc,
-                    width: 1426,
-                    height: 2000,
+                    width: 1600,
+                    height: 1600,
                   },
                   isHintEnabled: true,
                   shouldHideHintAfterFirstActivation: false,
