@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { graphql } from 'gatsby'
-
 import ReactCardFlip from 'react-card-flip'
+import ReactImageZoom from 'react-image-zoom'
+import ReactImageMagnify from 'react-image-magnify'
 
 import SEO from '~/components/seo'
 import ProductForm from '~/components/ProductForm'
@@ -18,8 +19,12 @@ import {
   ButtonContainer,
   Button,
   StyledImg,
+  HeadingContainer,
+  HeadingLeft,
+  HeadingRight,
 } from './styles'
 import 'normalize.css'
+import { over } from 'lodash'
 
 const ProductPage = ({ data }) => {
   const [isFlipped, setIsFlipped] = useState(false)
@@ -29,20 +34,82 @@ const ProductPage = ({ data }) => {
     <>
       <SEO title={product.title} description={product.description} />
       <Container>
+        <HeadingContainer>
+          <HeadingLeft>
+            <ProductTitle>{product.title}</ProductTitle>
+          </HeadingLeft>
+          <HeadingRight>
+            <ProductForm product={product} />
+          </HeadingRight>
+        </HeadingContainer>
+
         <TwoColumnGrid>
           <GridLeft>
             <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
-              <StyledImg
+              <ReactImageMagnify
+                {...{
+                  smallImage: {
+                    alt: 'Wristwatch by Ted Baker London',
+                    isFluidWidth: true,
+                    src: product.images[0].originalSrc,
+                  },
+                  largeImage: {
+                    src: product.images[0].originalSrc,
+                    width: 1600,
+                    height: 1600,
+                  },
+                  isHintEnabled: true,
+                  shouldHideHintAfterFirstActivation: false,
+                  enlargedImageContainerStyle: {
+                    backgroundColor: `white`,
+                  },
+                  lensStyle: { backgroundColor: 'rgba(0,0,0,.6)' },
+                  enlargedImagePosition: 'over',
+                }}
+              />
+              {/* <ReactImageZoom
+                width="400"
+                height="250"
+                zoomWidth="400"
+                img={product.images[0].originalSrc}
+              />  */}
+              {/* <StyledImg
                 key="front"
                 fluid={product.images[0].localFile.childImageSharp.fluid}
                 alt={product.title}
+              /> */}
+              <ReactImageMagnify
+                {...{
+                  smallImage: {
+                    alt: 'Wristwatch by Ted Baker London',
+                    isFluidWidth: true,
+                    src: product.images[1].originalSrc,
+                  },
+                  largeImage: {
+                    src: product.images[1].originalSrc,
+                    width: 1426,
+                    height: 2000,
+                  },
+                  isHintEnabled: true,
+                  shouldHideHintAfterFirstActivation: false,
+                  enlargedImageContainerStyle: {
+                    backgroundColor: `white`,
+                  },
+                  lensStyle: { backgroundColor: 'rgba(0,0,0,.6)' },
+                  enlargedImagePosition: 'over',
+                }}
               />
-
-              <StyledImg
+              {/* <ReactImageZoom
+                width="auto"
+                height="250"
+                zoomWidth="400"
+                img={product.images[1].originalSrc}
+              /> */}
+              {/* <StyledImg
                 key="back"
                 fluid={product.images[1].localFile.childImageSharp.fluid}
                 alt={product.title}
-              />
+              /> */}
             </ReactCardFlip>
             <ButtonContainer>
               <Button onClick={() => setIsFlipped(state => !state)}>
@@ -50,10 +117,8 @@ const ProductPage = ({ data }) => {
               </Button>
             </ButtonContainer>
           </GridLeft>
-          <GridRight>
-            <ProductTitle>{product.title}</ProductTitle>
-            <ProductForm product={product} />
 
+          <GridRight>
             <ProductDescription
               dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
             />
