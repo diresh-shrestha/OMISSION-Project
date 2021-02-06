@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { graphql } from 'gatsby'
 import ReactCardFlip from 'react-card-flip'
-import ReactImageZoom from 'react-image-zoom'
 import ReactImageMagnify from 'react-image-magnify'
 
 import SEO from '~/components/seo'
@@ -46,7 +45,7 @@ const ProductPage = ({ data }) => {
         <TwoColumnGrid>
           <GridLeft>
             <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
-              <ReactImageMagnify
+              {/* <ReactImageMagnify
                 {...{
                   smallImage: {
                     alt: 'Wristwatch by Ted Baker London',
@@ -66,19 +65,19 @@ const ProductPage = ({ data }) => {
                   lensStyle: { backgroundColor: 'rgba(0,0,0,.6)' },
                   enlargedImagePosition: 'over',
                 }}
-              />
+              /> */}
               {/* <ReactImageZoom
                 width="400"
                 height="250"
                 zoomWidth="400"
                 img={product.images[0].originalSrc}
               />  */}
-              {/* <StyledImg
+              <StyledImg
                 key="front"
                 fluid={product.images[0].localFile.childImageSharp.fluid}
                 alt={product.title}
-              /> */}
-              <ReactImageMagnify
+              />
+              {/* <ReactImageMagnify
                 {...{
                   smallImage: {
                     alt: 'Wristwatch by Ted Baker London',
@@ -98,18 +97,18 @@ const ProductPage = ({ data }) => {
                   lensStyle: { backgroundColor: 'rgba(0,0,0,.6)' },
                   enlargedImagePosition: 'over',
                 }}
-              />
+              /> */}
               {/* <ReactImageZoom
                 width="auto"
                 height="250"
                 zoomWidth="400"
                 img={product.images[1].originalSrc}
               /> */}
-              {/* <StyledImg
+              <StyledImg
                 key="back"
                 fluid={product.images[1].localFile.childImageSharp.fluid}
                 alt={product.title}
-              /> */}
+              />
             </ReactCardFlip>
             <ButtonContainer>
               <Button onClick={() => setIsFlipped(state => !state)}>
