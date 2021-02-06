@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { graphql } from 'gatsby'
 import ReactCardFlip from 'react-card-flip'
-import ReactImageMagnify from 'react-image-magnify'
+import ReactImageMagnify from '@milosmladenovicwork/react-image-magnify'
 
 import SEO from '~/components/seo'
 import ProductForm from '~/components/ProductForm'
