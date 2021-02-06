@@ -44,72 +44,72 @@ const ProductPage = ({ data }) => {
 
         <TwoColumnGrid>
           <GridLeft>
-            <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
-              {/* <ReactImageMagnify
-                {...{
-                  smallImage: {
-                    alt: 'Wristwatch by Ted Baker London',
-                    isFluidWidth: true,
-                    src: product.images[0].originalSrc,
-                  },
-                  largeImage: {
-                    src: product.images[0].originalSrc,
-                    width: 1600,
-                    height: 1600,
-                  },
-                  isHintEnabled: true,
-                  shouldHideHintAfterFirstActivation: false,
-                  enlargedImageContainerStyle: {
-                    backgroundColor: `white`,
-                  },
-                  lensStyle: { backgroundColor: 'rgba(0,0,0,.6)' },
-                  enlargedImagePosition: 'over',
-                }}
-              /> */}
-              {/* <ReactImageZoom
+            {/* <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal"> */}
+            <ReactImageMagnify
+              {...{
+                smallImage: {
+                  alt: 'Wristwatch by Ted Baker London',
+                  isFluidWidth: true,
+                  src: product.images[0].originalSrc,
+                },
+                largeImage: {
+                  src: product.images[0].originalSrc,
+                  width: 1600,
+                  height: 1600,
+                },
+                isHintEnabled: true,
+                shouldHideHintAfterFirstActivation: false,
+                enlargedImageContainerStyle: {
+                  backgroundColor: `white`,
+                },
+                lensStyle: { backgroundColor: 'rgba(0,0,0,.6)' },
+                enlargedImagePosition: 'over',
+              }}
+            />
+            {/* <ReactImageZoom
                 width="400"
                 height="250"
                 zoomWidth="400"
                 img={product.images[0].originalSrc}
               />  */}
-              <StyledImg
+            {/* <StyledImg
                 key="front"
                 fluid={product.images[0].localFile.childImageSharp.fluid}
                 alt={product.title}
-              />
-              {/* <ReactImageMagnify
-                {...{
-                  smallImage: {
-                    alt: 'Wristwatch by Ted Baker London',
-                    isFluidWidth: true,
-                    src: product.images[1].originalSrc,
-                  },
-                  largeImage: {
-                    src: product.images[1].originalSrc,
-                    width: 1600,
-                    height: 1600,
-                  },
-                  isHintEnabled: true,
-                  shouldHideHintAfterFirstActivation: false,
-                  enlargedImageContainerStyle: {
-                    backgroundColor: `white`,
-                  },
-                  lensStyle: { backgroundColor: 'rgba(0,0,0,.6)' },
-                  enlargedImagePosition: 'over',
-                }}
               /> */}
-              {/* <ReactImageZoom
+            <ReactImageMagnify
+              {...{
+                smallImage: {
+                  alt: 'Wristwatch by Ted Baker London',
+                  isFluidWidth: true,
+                  src: product.images[1].originalSrc,
+                },
+                largeImage: {
+                  src: product.images[1].originalSrc,
+                  width: 1600,
+                  height: 1600,
+                },
+                isHintEnabled: true,
+                shouldHideHintAfterFirstActivation: false,
+                enlargedImageContainerStyle: {
+                  backgroundColor: `white`,
+                },
+                lensStyle: { backgroundColor: 'rgba(0,0,0,.6)' },
+                enlargedImagePosition: 'over',
+              }}
+            />
+            {/* <ReactImageZoom
                 width="auto"
                 height="250"
                 zoomWidth="400"
                 img={product.images[1].originalSrc}
               /> */}
-              <StyledImg
+            {/* <StyledImg
                 key="back"
                 fluid={product.images[1].localFile.childImageSharp.fluid}
                 alt={product.title}
               />
-            </ReactCardFlip>
+            </ReactCardFlip> */}
             <ButtonContainer>
               <Button onClick={() => setIsFlipped(state => !state)}>
                 <p>SEE BACK</p>
