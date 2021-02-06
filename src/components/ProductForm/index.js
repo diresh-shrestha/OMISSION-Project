@@ -10,6 +10,7 @@ import {
   ButtonContainer,
   CounterContainer,
   StyledLabel,
+  Price,
 } from './styles'
 import ChevronDown from '../Icons/ChevronDown'
 import ProductQuantity from '../ProductQuantity/index'
@@ -116,7 +117,7 @@ const ProductForm = ({ product }) => {
 
   return (
     <>
-      <h3>{price}</h3>
+      <Price>{price}</Price>
 
       {options.map(({ id, name, values }, index) => (
         <React.Fragment key={id}>

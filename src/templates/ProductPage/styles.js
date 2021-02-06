@@ -3,8 +3,8 @@ import Img from 'gatsby-image'
 import { breakpoints } from '../../utils/styles'
 
 export const ProductTitle = styled.h1`
-  font-size: 2.25rem;
-  margin-bottom: 15px;
+  font-size: 3rem;
+
   word-wrap: break-word;
   font-family: 'Helvetica', 'Helvetica', sans-serif;
   font-weight: 400;
@@ -13,15 +13,15 @@ export const ProductTitle = styled.h1`
 `
 
 export const ProductDescription = styled.div`
-  margin-top: 40px;
+  margin-top: 1rem;
+  height: 840px;
   font-family: 'Helvetica', 'Helvetica', sans-serif;
   font-weight: 300;
   padding: 1rem;
-  margin: 2rem auto;
   width: auto;
-  height: 700px;
   overflow: auto;
-
+  border: solid;
+  border-width: 1px;
   @media (max-width: ${breakpoints.m}px) {
     overflow: none;
     height: auto;
@@ -72,3 +72,33 @@ export const Button = styled.button`
 `
 
 export const StyledImg = styled(Img)``
+
+export const HeadingContainer = styled.div`
+  display: flex;
+  margin-bottom: 2rem;
+  @media (max-width: ${breakpoints.l}px) {
+    flex-direction: column;
+  }
+`
+
+export const HeadingLeft = styled.div`
+  display: flex;
+  width: 50%;
+  justify-content: center;
+  @media (max-width: ${breakpoints.l}px) {
+    width: 100%;
+  }
+`
+export const HeadingRight = styled.div`
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+  margin: 0.5rem;
+
+  @media (max-width: ${breakpoints.l}px) {
+    width: 100%;
+  }
+  @media (max-width: ${breakpoints.s}px) {
+    flex-direction: column;
+  }
+`

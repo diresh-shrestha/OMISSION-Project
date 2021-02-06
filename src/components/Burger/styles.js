@@ -43,7 +43,7 @@ export const MenuButton = styled.div`
     }
   }
 
-  @media (min-width: ${breakpoints.m}px) {
+  @media (min-width: 768px) {
     display: none;
   }
 `

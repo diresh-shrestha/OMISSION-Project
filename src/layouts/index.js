@@ -16,7 +16,12 @@ const Wrapper = styled.div`
 `
 
 const FooterWrapper = styled.div`
-  margin: 0 auto;
+  margin: 1rem auto;
+
+  @media (max-width: 425px) {
+    display: flex;
+    justify-content: center;
+  }
   max-width: 1800px;
 `
 

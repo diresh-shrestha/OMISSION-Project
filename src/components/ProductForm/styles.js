@@ -3,7 +3,10 @@ import styled from 'styled-components'
 
 export const SelectContainer = styled.div`
   display: flex;
-  margin: 0.5rem 0;
+  margin: 20px 5px;
+  @media (max-width: 576px) {
+    margin: 0 auto;
+  }
 `
 
 export const Select = styled.select`
@@ -11,7 +14,7 @@ export const Select = styled.select`
   margin: 0px;
   min-width: 0px;
   display: block;
-  width: 150px;
+  width: 100px;
   padding: 8px;
   appearance: none;
   font-size: inherit;
@@ -20,20 +23,21 @@ export const Select = styled.select`
   border-radius: 4px;
   color: inherit;
   background-color: transparent;
+  height: fit-content;
 `
 
 export const ButtonContainer = styled.div`
   box-sizing: border-box;
-  margin: 0;
+  margin: 0 auto;
   min-width: 0;
-  margin: 1rem auto;
+  margin-top: 10px;
 `
 
 export const Button = styled.button`
   margin: 0px 0px 0px auto;
   min-width: 0px;
-  width: 50%;
-  height: 50px;
+  width: 100%;
+  height: auto;
   appearance: none;
   display: inline-block;
   text-align: center;
@@ -60,8 +64,16 @@ export const Button = styled.button`
 
 export const CounterContainer = styled.div`
   display: flex;
+  width: 150px;
+  margin: 0 auto;
 `
 
 export const StyledLabel = styled.label`
-  margin: 1rem 0;
+  display: none;
+`
+
+export const Price = styled.p`
+  margin: 2rem auto;
+  font-weight: bold;
+  font-size: 1.25 rem;
 `

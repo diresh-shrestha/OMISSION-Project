@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
+import { breakpoints } from '../../utils/styles'
 
 export const ListItems = styled.li`
   display: inline-block;
@@ -10,7 +11,7 @@ export const ListItems = styled.li`
 export const ListWrapper = styled.ul`
   float: left;
   margin: auto 0;
-  @media (max-width: 769px) {
+  @media (max-width: 767px) {
     display: none;
   }
 `

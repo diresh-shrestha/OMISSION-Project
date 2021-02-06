@@ -6,10 +6,10 @@ export const Container = styled.div`
   box-sizing: border-box;
   margin: 0px;
   min-width: 0px;
-  width: 10%;
   border-bottom: solid;
   margin: 0 2rem;
   margin-bottom: 1rem;
+  height: fit-content;
 `
 
 export const CounterContainer = styled.div`
