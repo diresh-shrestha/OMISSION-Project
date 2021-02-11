@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby'
+
 import 'normalize.css'
 
 import SEO from '~/components/seo'
@@ -7,7 +7,7 @@ import ProductGrid from '~/components/ProductGrid'
 
 const IndexPage = () => (
   <>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    <SEO keywords={[`clothing`, `ecommerce`, `shopify`, `journalism`]} />
     <ProductGrid />
   </>
 )
