@@ -66,11 +66,7 @@ const LineItem = props => {
         <Size>{selectedOptions}</Size>
       </TextWrapper>
       <PriceContainer>{displayPrice}</PriceContainer>
-      <ProductQuantity
-        currentAmount={quantity}
-        decreaseAmount={() => decreaseProductAmount({ id, quantity })}
-        increaseAmount={() => increaseProductAmount({ id, quantity })}
-      />
+      <p>{quantity}</p>
       <RemoveContainer onClick={handleRemove}>
         <Cross />
       </RemoveContainer>
