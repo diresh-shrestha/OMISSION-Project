@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyledFooter, FooterImg, SocialContianer, SocialLinks } from './styles'
-import FooterLogo from './Footer_logo.png'
+import FooterLogo from './omission.svg'
 import { Link } from 'gatsby'
 import Facebook from '../Icons/Facebook'
 import Instragram from '../Icons/Instagram'
