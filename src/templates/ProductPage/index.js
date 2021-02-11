@@ -56,8 +56,8 @@ const ProductPage = ({ data }) => {
                   },
                   largeImage: {
                     src: frontImageSrc,
-                    width: 1600,
-                    height: 1600,
+                    width: 1300,
+                    height: 1300,
                   },
                   isHintEnabled: true,
                   shouldHideHintAfterFirstActivation: false,
@@ -88,8 +88,8 @@ const ProductPage = ({ data }) => {
                   },
                   largeImage: {
                     src: BackImageSrc,
-                    width: 1600,
-                    height: 1600,
+                    width: 1300,
+                    height: 1300,
                   },
                   isHintEnabled: true,
                   shouldHideHintAfterFirstActivation: false,
