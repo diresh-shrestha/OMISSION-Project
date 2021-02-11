@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Link } from 'gatsby'
 
-import ProductCounter from '../../ProductQuantity/index'
+import ProductQuantity from '../../ProductQuantity/index'
 
 import StoreContext from '~/context/StoreContext'
 import {
@@ -66,8 +66,8 @@ const LineItem = props => {
         <Size>{selectedOptions}</Size>
       </TextWrapper>
       <PriceContainer>{displayPrice}</PriceContainer>
-      <ProductCounter
-        currentAmount={item.quantity}
+      <ProductQuantity
+        currentAmount={quantity}
         decreaseAmount={() => decreaseProductAmount({ id, quantity })}
         increaseAmount={() => increaseProductAmount({ id, quantity })}
       />

@@ -5,19 +5,12 @@ import ReactImageMagnify from '@milosmladenovicwork/react-image-magnify'
 
 import SEO from '~/components/seo'
 import ProductForm from '~/components/ProductForm'
-import {
-  Img,
-  Container,
-  TwoColumnGrid,
-  GridLeft,
-  GridRight,
-} from '~/utils/styles'
+import { Container, TwoColumnGrid, GridLeft, GridRight } from '~/utils/styles'
 import {
   ProductTitle,
   ProductDescription,
   ButtonContainer,
   Button,
-  StyledImg,
   HeadingContainer,
   HeadingLeft,
   HeadingRight,
@@ -33,7 +26,11 @@ const ProductPage = ({ data }) => {
   const BackImageSrc = product.images[1].originalSrc
   return (
     <>
-      <SEO title={product.title} description={product.description} />
+      <SEO
+        title={product.title}
+        description={product.description}
+        image={product.images[0].localFile.childImageSharp.fluid}
+      />
       <Container>
         <HeadingContainer>
           <HeadingLeft>

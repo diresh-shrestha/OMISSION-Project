@@ -46,7 +46,17 @@ const Cart = () => {
 
   return (
     <Items style={{ maxWidth: `1500px` }}>
-      {lineItems}
+      {checkout.lineItems.map(item => (
+        <React.Fragment>
+          <LineItem
+            key={item.id.toString()}
+            item={item}
+            decreaseProductAmount={decreaseProductAmount}
+            increaseProductAmount={increaseProductAmount}
+            removeItem={removeItem}
+          />
+        </React.Fragment>
+      ))}
       <CheckoutContainer>
         <PriceContainer>
           <h2>Subtotal: </h2>
