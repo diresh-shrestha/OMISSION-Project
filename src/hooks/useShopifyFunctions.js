@@ -6,8 +6,8 @@ const persistedStateId = 'shopifyCheckout'
 
 function createShopifyClient() {
   return shopify.buildClient({
-    domain: `${process.env.SHOP_NAME}.myshopify.com`,
-    storefrontAccessToken: process.env.SHOPIFY_ACCESS_TOKEN,
+    domain: `${process.env.GATSBY_SHOP_NAME}.myshopify.com`,
+    storefrontAccessToken: process.env.GATSBY_SHOPIFY_ACCESS_TOKEN,
   })
 }
 
