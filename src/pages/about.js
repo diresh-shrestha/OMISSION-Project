@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   Container,
   TwoColumnGrid,
@@ -38,25 +38,59 @@ const TeamContainer = styled.div`
 `
 
 const ProfilePic = styled(Img)`
-  width: 200px;
-  margin: 0.5rem auto;
+  width: 300px;
 `
 
 const People = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 300px;
+
   margin: 1rem;
   text-align: center;
+  p {
+    &:hover {
+      opacity: 1;
+    }
+  }
 `
 
 const Bio = styled.div`
   max-width: 400px;
 `
 
-const Name = styled.p`
-  margin: 0;
+const NameContainer = styled.div`
+  opacity: 0;
+  transition: opacity 0.3s ease 0s;
+  position: absolute;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  &:hover {
+    opacity: 1;
+  }
+  @media (max-width: ${breakpoints.m}px) {
+    opacity: 1;
+  }
+`
+
+const Name = styled.div`
   font-weight: bold;
+  margin: 5px;
+  position: absolute;
+  bottom: 40px;
+  text-transform: uppercase;
+  // opacity: ${({ hovered }) => (hovered ? '1' : '0')};
+  transition: opacity 0.5s;
+  color: white;
+  font-size: 1.5rem;
+`
+
+const PeopleContainer = styled.div`
+  position: relative;
 `
 
 const About = ({ data }) => {
@@ -64,14 +98,19 @@ const About = ({ data }) => {
     const { body, frontmatter } = abt.node
     return (
       <People>
-        <ProfilePic fluid={frontmatter.image.childImageSharp.fluid} />
-        <Name>{frontmatter.name}</Name>
-        <Name>
-          <em>{frontmatter.title}</em>
-        </Name>
-        <Bio>
+        <PeopleContainer>
+          <ProfilePic fluid={frontmatter.image.childImageSharp.fluid} />
+          <NameContainer>
+            <Name>{frontmatter.name}</Name>
+          </NameContainer>
+          {/* <Name>
+            <em>{frontmatter.title}</em>
+          </Name> */}
+        </PeopleContainer>
+
+        {/* <Bio>
           <MDXRenderer>{body}</MDXRenderer>
-        </Bio>
+        </Bio> */}
       </People>
     )
   })
