@@ -12,6 +12,16 @@ import styled from 'styled-components'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
+import {
+  AccordionWithHeader,
+  AccordionNode,
+  AccordionHeader,
+  AccordionPanel,
+} from 'react-accordion-with-header'
+import Instagram from '../components/Icons/Instagram'
+import Personal from '../components/Icons/External'
+import LinkedIn from '../components/Icons/LinkedIn'
+import Behance from '../components/Icons/Behance'
 
 const TextContainer = styled.div`
   margin: 1rem;
@@ -38,7 +48,15 @@ const TeamContainer = styled.div`
 `
 
 const ProfilePic = styled(Img)`
-  width: 300px;
+  width: 400px;
+
+  @media (max-width: ${breakpoints.m}px) {
+    width: 450px;
+  }
+
+  @media (max-width: ${breakpoints.s}px) {
+    width: 250px;
+  }
 `
 
 const People = styled.div`
@@ -56,6 +74,18 @@ const People = styled.div`
 
 const Bio = styled.div`
   max-width: 400px;
+  margin: 0 auto;
+  padding: 5px;
+  background: #efefef;
+  p {
+    margin: 0;
+  }
+  @media (max-width: ${breakpoints.m}px) {
+    max-width: 450px;
+  }
+  @media (max-width: ${breakpoints.s}px) {
+    width: 250px;
+  }
 `
 
 const NameContainer = styled.div`
@@ -89,8 +119,36 @@ const Name = styled.div`
   font-size: 1.5rem;
 `
 
+const OrgTitle = styled.div`
+  font-weight: bold;
+  margin: 5px;
+  position: absolute;
+  bottom: 10px;
+  text-transform: uppercase;
+  // opacity: ${({ hovered }) => (hovered ? '1' : '0')};
+  transition: opacity 0.5s;
+  color: white;
+  font-size: 1rem;
+  width: 100%;
+`
+
+const External = styled.a`
+  float: right;
+  margin-right: 1rem;
+  color: white;
+  &:hover {
+    color: red;
+  }
+`
+
 const PeopleContainer = styled.div`
   position: relative;
+`
+
+const StyledAccordionPanel = styled(AccordionPanel)`
+  .is-expanded {
+    max-height: 150px;
+  }
 `
 
 const About = ({ data }) => {
@@ -103,9 +161,6 @@ const About = ({ data }) => {
           <NameContainer>
             <Name>{frontmatter.name}</Name>
           </NameContainer>
-          {/* <Name>
-            <em>{frontmatter.title}</em>
-          </Name> */}
         </PeopleContainer>
 
         {/* <Bio>
@@ -117,7 +172,13 @@ const About = ({ data }) => {
   return (
     <Container>
       <TwoColumnGrid>
-        <GridLeft style={{ backgroundColor: `#efefef`, height: `fit-content` }}>
+        <GridLeft
+          style={{
+            backgroundColor: `#efefef`,
+            height: `fit-content`,
+            marginTop: `10rem`,
+          }}
+        >
           <TextContainer>
             <Title>MISSION</Title>
             <Paragraph>
@@ -164,7 +225,74 @@ const About = ({ data }) => {
             <Title style={{ textAlign: `center` }}>THE TEAM</Title>
           </TextContainer>
           <TeamContainer>
-            {about}
+            <AccordionWithHeader style={{ display: `contents` }}>
+              {data.about.edges.map((item, i) => {
+                const { body, frontmatter } = item.node
+                return (
+                  <AccordionNode key={i}>
+                    <AccordionHeader style={{ boxShadow: `none` }}>
+                      <People>
+                        <PeopleContainer>
+                          <ProfilePic
+                            fluid={frontmatter.image.childImageSharp.fluid}
+                          />
+                          <NameContainer>
+                            <Name>{frontmatter.name}</Name>
+                            <OrgTitle>
+                              {' '}
+                              <em style={{ float: `left` }}>
+                                {frontmatter.title}
+                              </em>
+                              {frontmatter.link.Instagram ? (
+                                <External
+                                  target="_blank"
+                                  href={frontmatter.link.Instagram}
+                                >
+                                  <Instagram />
+                                </External>
+                              ) : null}
+                              {frontmatter.link.Personal ? (
+                                <External
+                                  target="_blank"
+                                  href={frontmatter.link.Personal}
+                                >
+                                  <Personal />
+                                </External>
+                              ) : null}
+                              {frontmatter.link.LinkedIn ? (
+                                <External
+                                  target="_blank"
+                                  href={frontmatter.link.LinkedIn}
+                                >
+                                  <LinkedIn />
+                                </External>
+                              ) : null}
+                              {frontmatter.link.Behance ? (
+                                <External
+                                  target="_blank"
+                                  href={frontmatter.link.Behance}
+                                >
+                                  <Behance />
+                                </External>
+                              ) : null}
+                            </OrgTitle>
+                          </NameContainer>
+                        </PeopleContainer>
+
+                        {/* <Bio>
+          <MDXRenderer>{body}</MDXRenderer>
+        </Bio> */}
+                      </People>
+                    </AccordionHeader>
+                    <StyledAccordionPanel>
+                      <Bio>
+                        <MDXRenderer>{body}</MDXRenderer>
+                      </Bio>
+                    </StyledAccordionPanel>
+                  </AccordionNode>
+                )
+              })}
+            </AccordionWithHeader>
 
             {/* <ProfilePic src={HunterPic} />
 
@@ -188,6 +316,12 @@ export const query = graphql`
           frontmatter {
             title
             name
+            link {
+              Behance
+              Instagram
+              LinkedIn
+              Personal
+            }
             image {
               childImageSharp {
                 fluid(grayscale: true) {
