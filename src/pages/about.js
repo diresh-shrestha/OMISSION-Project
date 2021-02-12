@@ -57,7 +57,7 @@ const ProfilePic = styled(Img)`
   }
 
   @media (max-width: ${breakpoints.s}px) {
-    width: 250px;
+    width: 300px;
   }
 `
 
