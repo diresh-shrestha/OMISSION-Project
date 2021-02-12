@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import { breakpoints } from '../../utils/styles'
+import { Link } from 'gatsby'
 
 export const StyledFooter = styled.footer`
   display: flex;
@@ -9,14 +11,14 @@ export const StyledFooter = styled.footer`
   margin-bottom: 2rem;
   padding: 1rem;
 
-  @media (max-width: 425px) {
+  @media (max-width: ${breakpoints.s}px) {
     flex-direction: column;
-    justify-content: center;
   }
 `
 export const FooterImg = styled.img`
   height: 50px;
   width: 80px;
+  margin: 1rem auto;
 `
 
 export const SocialContianer = styled.div`
@@ -24,7 +26,22 @@ export const SocialContianer = styled.div`
 `
 
 export const SocialLinks = styled.a`
-  margin: auto 0.5rem;
+  margin: 1rem;
   text-decoration: none;
   color: black;
+  @media (max-width: ${breakpoints.s}px) {
+    margin: auto;
+  }
+`
+export const Copyright = styled.p`
+  @media (max-width: ${breakpoints.s}px) {
+    font-size: 0.8rem;
+  }
+`
+
+export const LogoLink = styled(Link)`
+  margin: 0;
+  @media (max-width: ${breakpoints.s}px) {
+    margin: auto;
+  }
 `
