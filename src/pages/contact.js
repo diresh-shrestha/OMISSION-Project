@@ -7,7 +7,7 @@ import 'normalize.css'
 import SEO from '../components/seo'
 
 const Recaptcha_Site_Key = process.env.GATSBY_RECAPTCHA_SITE_KEY
-// const Getform_URL = process.env.GATSBY_GETFORM_URL
+const Getform_URL = process.env.GATSBY_GETFORM_URL
 
 export const Button = styled.button`
   margin: 0px 0px 0px auto;
@@ -98,7 +98,7 @@ const ContactPage = () => {
     setServerState({ submitting: true })
     axios({
       method: 'post',
-      url: 'https://getform.io/f/1863898c-917b-4284-a53c-c9768c665e56',
+      url: Getform_URL,
       data: new FormData(form),
     })
       .then(r => {
