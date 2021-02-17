@@ -9,6 +9,7 @@ module.exports = {
     title: `Omission Project`,
     description: `Through the medium of clothing, we aim to put garments in conversation with media ecology; bringing awareness to media literacy and the contemporary conditions of the digital landscape.`,
     author: `@diresh-shrestha`,
+    siteUrl: `https://www.omissionproject.com/`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
