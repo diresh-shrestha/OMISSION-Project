@@ -121,7 +121,7 @@ const ContactPage = () => {
       />
 
       <Container>
-        <form>
+        <form onSubmit={handleOnSubmit}>
           <InputWrapper>
             <StyledInput
               type="text"
