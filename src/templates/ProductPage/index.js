@@ -16,7 +16,6 @@ import {
   HeadingRight,
 } from './styles'
 import 'normalize.css'
-import Hint from '../../components/ZoomHint/index'
 
 const ProductPage = ({ data }) => {
   const [isFlipped, setIsFlipped] = useState(false)
