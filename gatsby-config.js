@@ -19,6 +19,7 @@ module.exports = {
         path: `${__dirname}/content`,
       },
     },
+    `gatsby-plugin-sitemap`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-mdx`,
     `gatsby-transformer-sharp`,
