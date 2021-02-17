@@ -41,6 +41,7 @@ const Title = styled.h1`
 `
 const Paragraph = styled.p`
   margin-bottom: 5rem;
+  line-height: 1.5;
 `
 
 const TeamContainer = styled.div`
@@ -77,8 +78,9 @@ const People = styled.div`
 const Bio = styled.div`
   max-width: 400px;
   margin: 0 auto;
-  padding: 5px;
+  padding: 10px;
   background: #efefef;
+  line-height: 1.5;
   p {
     margin: 0;
   }
