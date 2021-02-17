@@ -16,7 +16,7 @@ import {
   HeadingRight,
 } from './styles'
 import 'normalize.css'
-import { over } from 'lodash'
+import Hint from '../../components/ZoomHint/index'
 
 const ProductPage = ({ data }) => {
   const [isFlipped, setIsFlipped] = useState(false)
@@ -47,7 +47,7 @@ const ProductPage = ({ data }) => {
               <ReactImageMagnify
                 {...{
                   smallImage: {
-                    alt: 'Wristwatch by Ted Baker London',
+                    alt: product.title,
                     isFluidWidth: true,
                     src: frontImageSrc,
                   },
@@ -57,7 +57,7 @@ const ProductPage = ({ data }) => {
                     height: 1300,
                   },
                   isHintEnabled: true,
-                  shouldHideHintAfterFirstActivation: false,
+                  shouldHideHintAfterFirstActivation: true,
                   enlargedImageContainerStyle: {
                     backgroundColor: `white`,
                   },
@@ -65,21 +65,11 @@ const ProductPage = ({ data }) => {
                   enlargedImagePosition: 'over',
                 }}
               />
-              {/* <ReactImageZoom
-                width="400"
-                height="250"
-                zoomWidth="400"
-                img={product.images[0].originalSrc}
-              />  */}
-              {/* <StyledImg
-                key="front"
-                fluid={product.images[0].localFile.childImageSharp.fluid}
-                alt={product.title}
-              /> */}
+
               <ReactImageMagnify
                 {...{
                   smallImage: {
-                    alt: 'Wristwatch by Ted Baker London',
+                    alt: product.title,
                     isFluidWidth: true,
                     src: BackImageSrc,
                   },
@@ -89,7 +79,7 @@ const ProductPage = ({ data }) => {
                     height: 1300,
                   },
                   isHintEnabled: true,
-                  shouldHideHintAfterFirstActivation: false,
+                  shouldHideHintAfterFirstActivation: true,
                   enlargedImageContainerStyle: {
                     backgroundColor: `white`,
                   },
@@ -97,17 +87,6 @@ const ProductPage = ({ data }) => {
                   enlargedImagePosition: 'over',
                 }}
               />
-              {/* <ReactImageZoom
-                width="auto"
-                height="250"
-                zoomWidth="400"
-                img={product.images[1].originalSrc}
-              /> */}
-              {/* <StyledImg
-                key="back"
-                fluid={product.images[1].localFile.childImageSharp.fluid}
-                alt={product.title}
-              /> */}
             </ReactCardFlip>
             <ButtonContainer>
               <Button onClick={() => setIsFlipped(state => !state)}>
