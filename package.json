@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-shopify-starter",
+  "name": "omission-project",
   "private": false,
-  "description": "A simple starter to build a blazing fast Shopify store quickly with Gatsby",
+  "description": "Omission Project Landing Page",
   "version": "0.1.0",
-  "author": "Alexander Hörl <alexander.horl2@live.de>",
+  "author": "Diresh Shrestha",
   "engines": {
     "node": "=> 10.13 < 14.9"
   },
@@ -75,7 +75,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/diresh-shrestha/OMISSION-Project"
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
