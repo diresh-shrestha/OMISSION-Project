@@ -1,11 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
+import { breakpoints } from '../../utils/styles'
 
 export const SelectContainer = styled.div`
   display: flex;
   margin: 20px 5px;
-  @media (max-width: 576px) {
-    margin: 0 auto;
+  @media (max-width: ${breakpoints.s}px) {
+    margin: 0.5rem auto;
   }
 `
 
@@ -66,6 +67,9 @@ export const CounterContainer = styled.div`
   display: flex;
   width: 150px;
   margin: 0 auto;
+  @media (max-width: ${breakpoints.s}px) {
+    margin: -0.5rem auto;
+  }
 `
 
 export const StyledLabel = styled.label`
@@ -76,4 +80,8 @@ export const Price = styled.p`
   margin: 2rem auto;
   font-weight: bold;
   font-size: 1.25 rem;
+
+  @media (max-width: ${breakpoints.s}px) {
+    margin: 1rem auto;
+  }
 `
