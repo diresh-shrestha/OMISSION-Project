@@ -88,7 +88,7 @@ const Bio = styled.div`
     max-width: 450px;
   }
   @media (max-width: ${breakpoints.s}px) {
-    width: 250px;
+    width: 300px;
   }
 `
 
