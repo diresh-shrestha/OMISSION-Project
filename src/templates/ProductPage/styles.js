@@ -14,7 +14,7 @@ export const ProductTitle = styled.h1`
 
 export const ProductDescription = styled.div`
   margin-top: 1rem;
-  height: 840px;
+  height: 700px;
   font-family: 'Helvetica', 'Helvetica', sans-serif;
   font-weight: 300;
   padding: 1rem;
@@ -41,18 +41,22 @@ export const ProductDescription = styled.div`
 export const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin: 1rem;
+  margin: 1rem auto;
   margin-bottom: 4rem;
+  width: fit-content;
 `
 
 export const Button = styled.button`
+  margin: 0px 0px 0px auto;
   min-width: 0px;
-  width: 150px;
+  width: 100%;
+  height: auto;
   appearance: none;
   display: inline-block;
   text-align: center;
   line-height: inherit;
   text-decoration: none;
+  padding: 8px 16px;
   box-sizing: border-box;
   font-family: 'Work Sans', system-ui, sans-serif;
   font-size: 16px;
@@ -99,6 +103,7 @@ export const HeadingRight = styled.div`
     width: 100%;
   }
   @media (max-width: ${breakpoints.s}px) {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 `
