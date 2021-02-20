@@ -28,6 +28,7 @@ import SEO from '../components/seo'
 const TextContainer = styled.div`
   margin: 1rem;
   padding: 2rem;
+  text-align: justify;
 `
 
 const Title = styled.h1`
@@ -81,6 +82,7 @@ const Bio = styled.div`
   padding: 10px;
   background: #efefef;
   line-height: 1.5;
+  text-align: justify;
   p {
     margin: 0;
   }
@@ -166,140 +168,138 @@ const About = ({ data }) => {
     <>
       <SEO title="About Us" />
       <Container>
-        <TwoColumnGrid>
-          <GridLeft
-            style={{
-              backgroundColor: `#efefef`,
-              height: `fit-content`,
-              marginTop: `10rem`,
-            }}
-          >
-            <TextContainer>
-              <Title>MISSION</Title>
-              <Paragraph>
-                Our mission is to organize a community to engage with journalism
-                and celebrate the work of individuals in the field. Through the
-                medium of clothing, we aim to put garments in conversation with
-                media ecology; bringing awareness to media literacy and the
-                contemporary conditions of the digital landscape.
-              </Paragraph>
-              <Title>ASPIRING JOURNALIST FUND</Title>
-              <Paragraph>
-                50% of proceeds contribute to the Aspiring Journalist Fund,
-                which is dedicated to financially supporting investigative
-                journalism projects. We prioritize coverage of local communities
-                and encourage university students to apply for grants with their
-                story proposals via email.
-              </Paragraph>
-              <Title>BEHIND THE NAME</Title>
-              <Paragraph>
-                Omission Project started from an awareness of shrinking
-                newsrooms across the United States, and the downstream impact on
-                public trust with “the media”. As news has become more
-                centralized, it is more likely for people to not see themselves
-                represented in national narratives. With this in mind, people
-                who don't see their own reality reflected in the news are more
-                likely to perceive biased reporting. In this context, “Omission”
-                refers to two elements:
-                <ol>
-                  <li>
-                    The omission of local community voices in news coverage.
-                  </li>
-                  <li>
-                    Our trust in journalists to omit information while
-                    maintaining the integrity of a story
-                  </li>
-                </ol>
-                We aim to spotlight these two elements by growing the broader
-                journalism community and bringing awareness to media literacy.
-              </Paragraph>
-            </TextContainer>
-          </GridLeft>
-          <GridRight>
-            <TextContainer>
-              <Title style={{ textAlign: `center` }}>THE TEAM</Title>
-            </TextContainer>
-            <TeamContainer>
-              <AccordionWithHeader style={{ display: `contents` }}>
-                {data.about.edges.map((item, i) => {
-                  const { body, frontmatter } = item.node
-                  return (
-                    <AccordionNode key={i}>
-                      <AccordionHeader style={{ boxShadow: `none` }}>
-                        <People>
-                          <PeopleContainer>
-                            <ProfilePic
-                              fluid={frontmatter.image.childImageSharp.fluid}
-                            />
-                            <NameContainer>
-                              <Name>{frontmatter.name}</Name>
-                              <OrgTitle>
-                                {' '}
-                                <em style={{ float: `left` }}>
-                                  {frontmatter.title}
-                                </em>
-                                {frontmatter.link.Instagram ? (
-                                  <External
-                                    rel="noreferrer"
-                                    target="_blank"
-                                    href={frontmatter.link.Instagram}
-                                  >
-                                    <Instagram />
-                                  </External>
-                                ) : null}
-                                {frontmatter.link.Personal ? (
-                                  <External
-                                    rel="noreferrer"
-                                    target="_blank"
-                                    href={frontmatter.link.Personal}
-                                  >
-                                    <Personal />
-                                  </External>
-                                ) : null}
-                                {frontmatter.link.LinkedIn ? (
-                                  <External
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    href={frontmatter.link.LinkedIn}
-                                  >
-                                    <LinkedIn />
-                                  </External>
-                                ) : null}
-                                {frontmatter.link.Behance ? (
-                                  <External
-                                    rel="noreferrer"
-                                    target="_blank"
-                                    href={frontmatter.link.Behance}
-                                  >
-                                    <Behance />
-                                  </External>
-                                ) : null}
-                              </OrgTitle>
-                            </NameContainer>
-                          </PeopleContainer>
+        <div
+          style={{
+            backgroundColor: `#efefef`,
+            height: `fit-content`,
+            marginTop: `10rem`,
+          }}
+        >
+          <TextContainer>
+            <Title>MISSION</Title>
+            <Paragraph>
+              Our mission is to organize a community to engage with journalism
+              and celebrate the work of individuals in the field. Through the
+              medium of clothing, we aim to put garments in conversation with
+              media ecology; bringing awareness to media literacy and the
+              contemporary conditions of the digital landscape.
+            </Paragraph>
+            <Title>ASPIRING JOURNALIST FUND</Title>
+            <Paragraph>
+              50% of proceeds contribute to the Aspiring Journalist Fund, which
+              is dedicated to financially supporting investigative journalism
+              projects. We prioritize coverage of local communities and
+              encourage university students to apply for grants with their story
+              proposals via email.
+            </Paragraph>
+            <Title>BEHIND THE NAME</Title>
+            <Paragraph>
+              Omission Project started from an awareness of shrinking newsrooms
+              across the United States, and the downstream impact on public
+              trust with “the media”. As news has become more centralized, it is
+              more likely for people to not see themselves represented in
+              national narratives. With this in mind, people who don't see their
+              own reality reflected in the news are more likely to perceive
+              biased reporting. In this context, “Omission” refers to two
+              elements:
+              <ol>
+                <li>
+                  The omission of local community voices in news coverage.
+                </li>
+                <li>
+                  Our trust in journalists to omit information while maintaining
+                  the integrity of a story
+                </li>
+              </ol>
+              We aim to spotlight these two elements by growing the broader
+              journalism community and bringing awareness to media literacy.
+            </Paragraph>
+          </TextContainer>
+        </div>
+        <div>
+          <TextContainer>
+            <Title style={{ textAlign: `center` }}>THE TEAM</Title>
+          </TextContainer>
+          <TeamContainer>
+            <AccordionWithHeader style={{ display: `contents` }}>
+              {data.about.edges.map((item, i) => {
+                const { body, frontmatter } = item.node
+                return (
+                  <AccordionNode key={i}>
+                    <AccordionHeader style={{ boxShadow: `none` }}>
+                      <People>
+                        <PeopleContainer>
+                          <ProfilePic
+                            fluid={frontmatter.image.childImageSharp.fluid}
+                          />
+                          <NameContainer>
+                            <Name>{frontmatter.name}</Name>
+                            <OrgTitle>
+                              {' '}
+                              <em style={{ float: `left` }}>
+                                {frontmatter.title}
+                              </em>
+                              {frontmatter.link.Instagram ? (
+                                <External
+                                  rel="noreferrer"
+                                  target="_blank"
+                                  href={frontmatter.link.Instagram}
+                                >
+                                  <Instagram />
+                                </External>
+                              ) : null}
+                              {frontmatter.link.Personal ? (
+                                <External
+                                  rel="noreferrer"
+                                  target="_blank"
+                                  href={frontmatter.link.Personal}
+                                >
+                                  <Personal />
+                                </External>
+                              ) : null}
+                              {frontmatter.link.LinkedIn ? (
+                                <External
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  href={frontmatter.link.LinkedIn}
+                                >
+                                  <LinkedIn />
+                                </External>
+                              ) : null}
+                              {frontmatter.link.Behance ? (
+                                <External
+                                  rel="noreferrer"
+                                  target="_blank"
+                                  href={frontmatter.link.Behance}
+                                >
+                                  <Behance />
+                                </External>
+                              ) : null}
+                            </OrgTitle>
+                          </NameContainer>
+                        </PeopleContainer>
 
-                          {/* <Bio>
+                        {/* <Bio>
           <MDXRenderer>{body}</MDXRenderer>
         </Bio> */}
-                        </People>
-                      </AccordionHeader>
-                      <StyledAccordionPanel>
-                        <Bio>
-                          <MDXRenderer>{body}</MDXRenderer>
-                        </Bio>
-                      </StyledAccordionPanel>
-                    </AccordionNode>
-                  )
-                })}
-              </AccordionWithHeader>
+                      </People>
+                    </AccordionHeader>
+                    <StyledAccordionPanel>
+                      <Bio>
+                        <MDXRenderer>{body}</MDXRenderer>
+                      </Bio>
+                    </StyledAccordionPanel>
+                  </AccordionNode>
+                )
+              })}
+            </AccordionWithHeader>
 
-              {/* <ProfilePic src={HunterPic} />
+            {/* <ProfilePic src={HunterPic} />
 
             <ProfilePic src={PaulPic} />
             <ProfilePic src={DireshPic} /> */}
-            </TeamContainer>
-          </GridRight>
-        </TwoColumnGrid>
+          </TeamContainer>
+        </div>
       </Container>
     </>
   )
