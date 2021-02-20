@@ -6,7 +6,7 @@ export const SelectContainer = styled.div`
   display: flex;
   margin: 20px 5px;
   @media (max-width: ${breakpoints.s}px) {
-    margin: 0.5rem auto;
+    margin: 0.5rem 0.5rem;
   }
 `
 
@@ -68,7 +68,7 @@ export const CounterContainer = styled.div`
   width: 150px;
   margin: 0 auto;
   @media (max-width: ${breakpoints.s}px) {
-    margin: -0.5rem auto;
+    margin: -0.5rem 0.5rem;
   }
 `
 
@@ -82,6 +82,6 @@ export const Price = styled.p`
   font-size: 1.25 rem;
 
   @media (max-width: ${breakpoints.s}px) {
-    margin: 1rem auto;
+    margin: 1rem 0.5rem;
   }
 `
