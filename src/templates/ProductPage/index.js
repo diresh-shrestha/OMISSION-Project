@@ -14,6 +14,7 @@ import {
   HeadingContainer,
   HeadingLeft,
   HeadingRight,
+  StickyLeft,
 } from './styles'
 import 'normalize.css'
 
@@ -42,56 +43,58 @@ const ProductPage = ({ data }) => {
 
         <TwoColumnGrid>
           <GridLeft>
-            <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
-              <ReactImageMagnify
-                {...{
-                  smallImage: {
-                    alt: product.title,
-                    isFluidWidth: true,
-                    src: frontImageSrc,
-                  },
-                  largeImage: {
-                    src: frontImageSrc,
-                    width: 1300,
-                    height: 1300,
-                  },
-                  isHintEnabled: true,
-                  shouldHideHintAfterFirstActivation: true,
-                  enlargedImageContainerStyle: {
-                    backgroundColor: `white`,
-                  },
-                  lensStyle: { backgroundColor: 'rgba(0,0,0,.6)' },
-                  enlargedImagePosition: 'over',
-                }}
-              />
+            <StickyLeft>
+              <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
+                <ReactImageMagnify
+                  {...{
+                    smallImage: {
+                      alt: product.title,
+                      isFluidWidth: true,
+                      src: frontImageSrc,
+                    },
+                    largeImage: {
+                      src: frontImageSrc,
+                      width: 1300,
+                      height: 1300,
+                    },
+                    isHintEnabled: true,
+                    shouldHideHintAfterFirstActivation: true,
+                    enlargedImageContainerStyle: {
+                      backgroundColor: `white`,
+                    },
+                    lensStyle: { backgroundColor: 'rgba(0,0,0,.6)' },
+                    enlargedImagePosition: 'over',
+                  }}
+                />
 
-              <ReactImageMagnify
-                {...{
-                  smallImage: {
-                    alt: product.title,
-                    isFluidWidth: true,
-                    src: BackImageSrc,
-                  },
-                  largeImage: {
-                    src: BackImageSrc,
-                    width: 1300,
-                    height: 1300,
-                  },
-                  isHintEnabled: true,
-                  shouldHideHintAfterFirstActivation: true,
-                  enlargedImageContainerStyle: {
-                    backgroundColor: `white`,
-                  },
-                  lensStyle: { backgroundColor: 'rgba(0,0,0,.6)' },
-                  enlargedImagePosition: 'over',
-                }}
-              />
-            </ReactCardFlip>
-            <ButtonContainer>
-              <Button onClick={() => setIsFlipped(state => !state)}>
-                <p>SEE BACK</p>
-              </Button>
-            </ButtonContainer>
+                <ReactImageMagnify
+                  {...{
+                    smallImage: {
+                      alt: product.title,
+                      isFluidWidth: true,
+                      src: BackImageSrc,
+                    },
+                    largeImage: {
+                      src: BackImageSrc,
+                      width: 1300,
+                      height: 1300,
+                    },
+                    isHintEnabled: true,
+                    shouldHideHintAfterFirstActivation: true,
+                    enlargedImageContainerStyle: {
+                      backgroundColor: `white`,
+                    },
+                    lensStyle: { backgroundColor: 'rgba(0,0,0,.6)' },
+                    enlargedImagePosition: 'over',
+                  }}
+                />
+              </ReactCardFlip>
+              <ButtonContainer>
+                <Button onClick={() => setIsFlipped(state => !state)}>
+                  {isFlipped ? 'SEE FRONT' : 'SEE BACK'}
+                </Button>
+              </ButtonContainer>
+            </StickyLeft>
           </GridLeft>
 
           <GridRight>

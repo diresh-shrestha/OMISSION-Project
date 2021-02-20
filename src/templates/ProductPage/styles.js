@@ -2,6 +2,11 @@ import styled from 'styled-components'
 import Img from 'gatsby-image'
 import { breakpoints } from '../../utils/styles'
 
+export const StickyLeft = styled.div`
+  position: sticky;
+  top: 100px;
+`
+
 export const ProductTitle = styled.h1`
   font-size: 3rem;
 
@@ -14,7 +19,7 @@ export const ProductTitle = styled.h1`
 
 export const ProductDescription = styled.div`
   margin-top: 1rem;
-  height: 700px;
+  height: auto;
   font-family: 'Helvetica', 'Helvetica', sans-serif;
   font-weight: 300;
   padding: 1rem;
@@ -22,6 +27,7 @@ export const ProductDescription = styled.div`
   overflow: auto;
   border: solid;
   border-width: 1px;
+  text-align: justify;
   @media (max-width: ${breakpoints.m}px) {
     overflow: none;
     height: auto;
