@@ -28,7 +28,6 @@ import SEO from '../components/seo'
 const TextContainer = styled.div`
   margin: 1rem;
   padding: 2rem;
-  text-align: justify;
 `
 
 const Title = styled.h1`
@@ -43,6 +42,7 @@ const Title = styled.h1`
 const Paragraph = styled.p`
   margin-bottom: 5rem;
   line-height: 1.5;
+  text-align: justify;
 `
 
 const TeamContainer = styled.div`
