@@ -45,7 +45,7 @@ export const Container = styled.div`
 
 export const TwoColumnGrid = styled.div`
   display: grid;
-  grid-template-columns: 1fr 2rem 1fr;
+  grid-template-columns: 1fr 0rem 1fr;
   grid-template-rows: 1auto;
   grid-template-areas: 'left . right';
 
