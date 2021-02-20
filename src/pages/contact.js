@@ -120,6 +120,7 @@ const ContactPage = () => {
       />
 
       <Container>
+        <h1>Questions? We'd love to hear from you!</h1>
         <form onSubmit={handleOnSubmit}>
           <InputWrapper>
             <StyledInput
