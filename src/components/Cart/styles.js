@@ -23,8 +23,6 @@ export const Button = styled.button`
   margin: 1rem;
   min-width: 0px;
   cursor: pointer;
-  width: 20%;
-  height: 50px;
   appearance: none;
   display: inline-block;
   text-align: center;
