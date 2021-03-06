@@ -40,7 +40,7 @@ const Title = styled.h1`
   }
 `
 const Paragraph = styled.p`
-  margin-bottom: 5rem;
+  margin-bottom: 1rem;
   line-height: 1.5;
   text-align: justify;
 `
@@ -176,43 +176,36 @@ const About = ({ data }) => {
           }}
         >
           <TextContainer>
-            <Title>MISSION</Title>
+            <Title>Behind the Name</Title>
             <Paragraph>
-              Our mission is to organize a community to engage with journalism
-              and celebrate the work of individuals in the field. Through the
-              medium of clothing, we aim to put garments in conversation with
-              media ecology; bringing awareness to media literacy and the
-              contemporary conditions of the digital landscape.
-            </Paragraph>
-            <Title>ASPIRING JOURNALIST FUND</Title>
-            <Paragraph>
-              50% of proceeds contribute to the Aspiring Journalist Fund, which
-              is dedicated to financially supporting investigative journalism
-              projects. We prioritize coverage of local communities and
-              encourage university students to apply for grants with their story
-              proposals via email.
-            </Paragraph>
-            <Title>BEHIND THE NAME</Title>
-            <Paragraph>
-              Omission Project started from an awareness of shrinking newsrooms
-              across the United States, and the downstream impact on public
-              trust with “the media”. As news has become more centralized, it is
-              more likely for people to not see themselves represented in
-              national narratives. With this in mind, people who don't see their
-              own reality reflected in the news are more likely to perceive
-              biased reporting. In this context, “Omission” refers to two
+              Omission Project arose from an awareness of shrinking newsrooms
+              across the United States. We believe that as local coverage
+              continues to diminish, it becomes more likely for people to not
+              see their own reality reflected in national narratives. This
+              challenges public trust in journalists to provide fair and
+              accurate information. In this context, “Omission” refers to two
               elements:
               <ol>
                 <li>
                   The omission of local community voices in news coverage.
                 </li>
                 <li>
-                  Our trust in journalists to omit information while maintaining
-                  the integrity of a story
+                  The omission of details by journalists, and public trust in
+                  their ability to maintain integrity.
                 </li>
               </ol>
-              We aim to spotlight these two elements by growing the broader
-              journalism community and bringing awareness to media literacy.
+              Our mission is to organize a broader community to engage with
+              journalism through the medium of clothing. We aim to put garments
+              in conversation with media ecology; bringing awareness to media
+              literacy and the contemporary conditions of the digital landscape.
+              50% of our proceeds are donated to{' '}
+              <a href="https://www.reportforamerica.org/">Report for America</a>{' '}
+              with the intention of supporting the growth of emerging
+              journalists and local journalism.
+            </Paragraph>
+            <Paragraph>
+              We’d be honored for you to share our message in pursuit of a more
+              well-informed public.
             </Paragraph>
           </TextContainer>
         </div>
