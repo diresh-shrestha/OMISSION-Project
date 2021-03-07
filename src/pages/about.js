@@ -198,7 +198,7 @@ const About = ({ data }) => {
               journalism through the medium of clothing. We aim to put garments
               in conversation with media ecology; bringing awareness to media
               literacy and the contemporary conditions of the digital landscape.
-              50% of our proceeds are donated to{' '}
+              50% of our profits are donated to{' '}
               <a href="https://www.reportforamerica.org/">Report for America</a>{' '}
               with the intention of supporting the growth of emerging
               journalists and local journalism.
