@@ -169,7 +169,7 @@ const ProductForm = ({ product }) => {
           disabled={!available || adding}
           onClick={handleAddToCart}
         >
-          Add to Cart
+          Pre-Order
         </Button>
       </ButtonContainer>
 
