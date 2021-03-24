@@ -1,18 +1,11 @@
-<<<<<<< HEAD
 backend:
   name: github
   repo: diresh-shrestha/OMISSION-Project
-=======
-backend: 
-    name: github
-    repo: [diresh-shrestha]/[OMISSION-Project]
->>>>>>> bf1d6805ef744a8361fdf519c8631d5e0162469c
 
 media_folder: static/assets
 public_folder: assets
 
 collections:
-<<<<<<< HEAD
   - label: 'Pages'
     name: 'pages'
     files:
@@ -23,15 +16,3 @@ collections:
           - { label: 'Title', name: 'title', widget: 'string' }
           - { label: 'Intro text', name: 'intro', widget: 'text' }
           - { label: 'Image', name: 'image', widget: 'image' }
-=======
-  - label: "Pages"
-    name: "pages"
-    files:
-      - label: "About Page"
-        name: "about"
-        file: "content/About/about.md"
-        fields:
-          - {label: Title, name: title, widget: string}
-          - {label: Intro text, name: intro, widget: text}
-          - {label: Image, name: image, widget: image}
->>>>>>> bf1d6805ef744a8361fdf519c8631d5e0162469c
