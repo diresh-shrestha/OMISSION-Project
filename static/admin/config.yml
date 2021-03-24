@@ -1,0 +1,18 @@
+backend: 
+    name: github
+    repo: [diresh-shrestha]/[OMISSION-Project]
+
+media_folder: static/assets
+public_folder: assets
+
+collections:
+  - label: "Pages"
+    name: "pages"
+    files:
+      - label: "About Page"
+        name: "about"
+        file: "content/About/about.md"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Intro text, name: intro, widget: text}
+          - {label: Image, name: image, widget: image}

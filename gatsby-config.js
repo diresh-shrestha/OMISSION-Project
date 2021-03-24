@@ -27,6 +27,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-layout`,
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-netlify-cms`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -62,6 +63,7 @@ module.exports = {
         verbose: true,
       },
     },
+
     {
       resolve: 'gatsby-plugin-root-import',
       options: {
