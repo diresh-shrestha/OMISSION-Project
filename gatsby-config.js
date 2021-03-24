@@ -63,6 +63,7 @@ module.exports = {
         verbose: true,
       },
     },
+
     {
       resolve: 'gatsby-plugin-root-import',
       options: {
