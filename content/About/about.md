@@ -8,10 +8,11 @@ paragraph: >-
   fair and accurate information. In this context, “Omission” refers to two
   elements:
 
-  The omission of local community voices in news coverage.
 
-  The omission of details by journalists, and public trust in their ability to maintain integrity.
+  1. The omission of local community voices in news coverage. 
 
+  2.  The omission of details by journalists, and public trust in their ability to maintain integrity.
+     
   Our mission is to organize a broader community to engage with journalism through the medium of clothing. We aim to put garments in conversation with media ecology; bringing awareness to media literacy and the contemporary conditions of the digital landscape. 50% of our profits are donated to Report for America with the intention of supporting the growth of emerging journalists and local journalism.
 
 
