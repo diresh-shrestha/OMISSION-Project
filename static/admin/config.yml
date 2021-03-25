@@ -14,5 +14,5 @@ collections:
         file: 'content/About/about.md'
         fields:
           - { label: 'Title', name: 'title', widget: 'string' }
-          - { label: 'Intro text', name: 'intro', widget: 'text' }
-          - { label: 'Image', name: 'image', widget: 'image' }
+          - { label: 'Paragraph', name: 'paragraph', widget: 'markdown' }
+          #fileds: [{label: 'First Paragraph', name: 'firstParagraph', widget: ''} ]
