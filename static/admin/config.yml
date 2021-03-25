@@ -14,22 +14,15 @@ collections:
         file: 'content/About/about.md'
         fields:
           - { label: 'Title', name: 'title', widget: 'string' }
+
           - {
-              label: 'Paragraph',
-              name: 'paragraph',
+              label: 'First Paragraph',
+              name: 'firstParagraph',
               widget: 'markdown',
-              fileds:
-                [
-                  {
-                    label: 'First Paragraph',
-                    name: 'firstParagraph',
-                    widget: 'markdown',
-                  },
-                  { label: 'List', name: 'list', widget: 'markdown' },
-                  {
-                    label: 'Second Paragraph',
-                    name: 'secondParagraph',
-                    widget: 'markdown',
-                  },
-                ],
+            }
+          - { label: 'List', name: 'list', widget: 'markdown' }
+          - {
+              label: 'Second Paragraph',
+              name: 'secondParagraph',
+              widget: 'markdown',
             }
