@@ -176,37 +176,8 @@ const About = ({ data }) => {
           }}
         >
           <TextContainer>
-            <Title>Behind the Name</Title>
-            <Paragraph>
-              Omission Project arose from an awareness of shrinking newsrooms
-              across the United States. We believe that as local coverage
-              continues to diminish, it becomes more likely for people to not
-              see their own reality reflected in national narratives. This
-              challenges public trust in journalists to provide fair and
-              accurate information. In this context, “Omission” refers to two
-              elements:
-              <ol>
-                <li>
-                  The omission of local community voices in news coverage.
-                </li>
-                <li>
-                  The omission of details by journalists, and public trust in
-                  their ability to maintain integrity.
-                </li>
-              </ol>
-              Our mission is to organize a broader community to engage with
-              journalism through the medium of clothing. We aim to put garments
-              in conversation with media ecology; bringing awareness to media
-              literacy and the contemporary conditions of the digital landscape.
-              50% of our profits are donated to{' '}
-              <a href="https://www.reportforamerica.org/">Report for America</a>{' '}
-              with the intention of supporting the growth of emerging
-              journalists and local journalism.
-            </Paragraph>
-            <Paragraph>
-              We’d be honored for you to share our message in pursuit of a more
-              well-informed public.
-            </Paragraph>
+            <Title>{data.markdownRemark.frontmatter.title}</Title>
+            <Paragraph>{data.markdownRemark.frontmatter.paragraph}</Paragraph>
           </TextContainer>
         </div>
         <div>
@@ -215,7 +186,7 @@ const About = ({ data }) => {
           </TextContainer>
           <TeamContainer>
             <AccordionWithHeader style={{ display: `contents` }}>
-              {data.about.edges.map((item, i) => {
+              {data.people.edges.map((item, i) => {
                 const { body, frontmatter } = item.node
                 return (
                   <AccordionNode key={i}>
@@ -302,7 +273,7 @@ export default About
 
 export const query = graphql`
   {
-    about: allMdx(sort: { fields: frontmatter___order }) {
+    people: allMdx(sort: { fields: frontmatter___order }) {
       edges {
         node {
           body
@@ -324,6 +295,12 @@ export const query = graphql`
             }
           }
         }
+      }
+    }
+    markdownRemark {
+      frontmatter {
+        paragraph
+        title
       }
     }
   }
