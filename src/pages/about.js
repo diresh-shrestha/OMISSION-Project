@@ -28,6 +28,10 @@ import SEO from '../components/seo'
 const TextContainer = styled.div`
   margin: 1rem;
   padding: 2rem;
+
+  li {
+    margin-bottom: 0.5rem;
+  }
 `
 
 const Title = styled.h1`
@@ -177,7 +181,19 @@ const About = ({ data }) => {
         >
           <TextContainer>
             <Title>{data.markdownRemark.frontmatter.title}</Title>
-            <Paragraph>{data.markdownRemark.frontmatter.paragraph}</Paragraph>
+            <Paragraph>
+              {data.markdownRemark.frontmatter.firstParagraph}
+            </Paragraph>
+            <ol>
+              <li>{data.markdownRemark.frontmatter.list1}</li>
+              <li>{data.markdownRemark.frontmatter.list2}</li>
+            </ol>
+            <Paragraph>
+              {data.markdownRemark.frontmatter.secondParagraph}
+            </Paragraph>
+            <Paragraph>
+              {data.markdownRemark.frontmatter.thirdParagraph}
+            </Paragraph>
           </TextContainer>
         </div>
         <div>
@@ -299,8 +315,11 @@ export const query = graphql`
     }
     markdownRemark {
       frontmatter {
-        paragraph
-        title
+        firstParagraph
+        list1
+        list2
+        secondParagraph
+        thirdParagraph
       }
     }
   }

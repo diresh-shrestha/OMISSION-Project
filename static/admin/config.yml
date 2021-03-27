@@ -20,9 +20,16 @@ collections:
               name: 'firstParagraph',
               widget: 'markdown',
             }
-          - { label: 'List', name: 'list', widget: 'markdown' }
+          - { label: 'List Item1', name: 'list1', widget: 'markdown' }
+          - { label: 'List Item2', name: 'list2', widget: 'markdown' }
+
           - {
               label: 'Second Paragraph',
               name: 'secondParagraph',
+              widget: 'markdown',
+            }
+          - {
+              label: 'Third Paragraph',
+              name: 'thirdParagraph',
               widget: 'markdown',
             }
