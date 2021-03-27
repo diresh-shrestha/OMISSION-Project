@@ -315,6 +315,7 @@ export const query = graphql`
     }
     markdownRemark {
       frontmatter {
+        title
         firstParagraph
         list1
         list2
