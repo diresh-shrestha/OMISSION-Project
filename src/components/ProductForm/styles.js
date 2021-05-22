@@ -75,7 +75,6 @@ export const CounterContainer = styled.div`
 export const StyledLabel = styled.label`
   display: none;
 `
-
 export const Price = styled.p`
   margin: 2rem auto;
   font-weight: bold;
@@ -84,4 +83,15 @@ export const Price = styled.p`
   @media (max-width: ${breakpoints.s}px) {
     margin: 1rem 0.5rem;
   }
+`
+export const Modal = styled.div`
+  position: fixed;
+  right: ${({ showModal }) => (showModal ? '0' : '-150vh')};
+  background-color: #fff;
+  width: auto;
+  box-shadow: 0 0.4rem 0.8rem 0 rgb(0 0 0 / 20%);
+  padding: 1rem;
+  transition: right 0.3s ease-in-out;
+  z-index: 10;
+  top: 14rem;
 `

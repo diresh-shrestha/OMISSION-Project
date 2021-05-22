@@ -11,6 +11,7 @@ import {
   CounterContainer,
   StyledLabel,
   Price,
+  Modal,
 } from './styles'
 import ChevronDown from '../Icons/ChevronDown'
 import ProductQuantity from '../ProductQuantity/index'
@@ -109,6 +110,8 @@ const ProductForm = ({ product }) => {
     return true
   }
 
+  const [showModal, setShowModal] = useState(false)
+
   const price = Intl.NumberFormat(undefined, {
     currency: minVariantPrice.currencyCode,
     minimumFractionDigits: 2,
@@ -167,11 +170,22 @@ const ProductForm = ({ product }) => {
         <Button
           type="submit"
           disabled={!available || adding}
-          onClick={handleAddToCart}
+          // onClick={handleAddToCart}
+          onClick={() => {
+            setShowModal(true)
+            handleAddToCart()
+          }}
         >
           Pre-Order
         </Button>
       </ButtonContainer>
+      <Modal
+        tabIndex="0"
+        onClick={() => setShowModal(!showModal)}
+        showModal={showModal}
+      >
+        Added to cart!
+      </Modal>
 
       {!available && <p>This Product is out of Stock!</p>}
     </>
