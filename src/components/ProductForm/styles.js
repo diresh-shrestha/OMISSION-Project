@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { breakpoints } from '../../utils/styles'
+import { Link } from 'gatsby'
 
 export const SelectContainer = styled.div`
   display: flex;
@@ -61,6 +62,7 @@ export const Button = styled.button`
     background-color: transparent;
     color: #333;
   }
+  margin-top: 1rem;
 `
 
 export const CounterContainer = styled.div`
@@ -85,13 +87,26 @@ export const Price = styled.p`
   }
 `
 export const Modal = styled.div`
+  display: flex;
+  flex-direction: column;
   position: fixed;
   right: ${({ showModal }) => (showModal ? '0' : '-150vh')};
   background-color: #fff;
-  width: auto;
+  width: 250px;
   box-shadow: 0 0.4rem 0.8rem 0 rgb(0 0 0 / 20%);
   padding: 1rem;
   transition: right 0.3s ease-in-out;
   z-index: 10;
   top: 14rem;
+`
+export const PageLink = styled(Link)`
+  position: relative;
+  padding: 0.2rem;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: white;
+  &:hover {
+    background-color: transparent;
+    color: #333;
+  }
 `

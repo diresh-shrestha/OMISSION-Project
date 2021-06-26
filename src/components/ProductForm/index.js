@@ -2,6 +2,9 @@ import React, { useState, useContext, useEffect, useCallback } from 'react'
 import find from 'lodash/find'
 import isEqual from 'lodash/isEqual'
 import PropTypes from 'prop-types'
+import { Link } from 'gatsby'
+import Check from '../Icons/Check'
+import Cross from '../Icons/Cross'
 
 import {
   Select,
@@ -12,6 +15,7 @@ import {
   StyledLabel,
   Price,
   Modal,
+  PageLink,
 } from './styles'
 import ChevronDown from '../Icons/ChevronDown'
 import ProductQuantity from '../ProductQuantity/index'
@@ -184,7 +188,20 @@ const ProductForm = ({ product }) => {
         onClick={() => setShowModal(!showModal)}
         showModal={showModal}
       >
-        Added to cart!
+        {/* <div>
+          <Cross />
+        </div> */}
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <div style={{ margin: 'auto' }}>
+            <Check />
+          </div>
+          <div style={{ margin: 'auto', marginTop: `1rem` }}>
+            <p style={{ margin: `0` }}>Item added to cart!</p>
+            <Button>
+              <PageLink to="/cart">View Bag</PageLink>
+            </Button>
+          </div>
+        </div>
       </Modal>
 
       {!available && <p>This Product is out of Stock!</p>}
