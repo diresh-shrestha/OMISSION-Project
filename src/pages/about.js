@@ -8,7 +8,7 @@ import {
 } from '../utils/styles'
 import 'normalize.css'
 import styled from 'styled-components'
-
+import Layout from '../components/Layout'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
@@ -169,7 +169,7 @@ const StyledAccordionPanel = styled(AccordionPanel)`
 
 const About = ({ data }) => {
   return (
-    <>
+    <Layout>
       <SEO title="About Us" />
       <Container>
         <div
@@ -281,7 +281,7 @@ const About = ({ data }) => {
           </TeamContainer>
         </div>
       </Container>
-    </>
+    </Layout>
   )
 }
 

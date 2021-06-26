@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { graphql } from 'gatsby'
 import ReactCardFlip from 'react-card-flip'
 import ReactImageMagnify from '@milosmladenovicwork/react-image-magnify'
+import Layout from '../../components/Layout'
 
 import SEO from '~/components/seo'
 import ProductForm from '~/components/ProductForm'
@@ -25,7 +26,7 @@ const ProductPage = ({ data }) => {
   const frontImageSrc = product.images[0].originalSrc
   const BackImageSrc = product.images[1].originalSrc
   return (
-    <>
+    <Layout>
       <SEO
         title={product.title}
         description={product.description}
@@ -104,7 +105,7 @@ const ProductPage = ({ data }) => {
           </GridRight>
         </TwoColumnGrid>
       </Container>
-    </>
+    </Layout>
   )
 }
 

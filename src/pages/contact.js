@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-
+import Layout from '../components/Layout'
 import axios from 'axios'
 import ReCAPTCHA from 'react-google-recaptcha'
 import 'normalize.css'
@@ -112,7 +112,7 @@ const ContactPage = () => {
       })
   }
   return (
-    <>
+    <Layout>
       <SEO
         title="Contact"
         pathname="contact/"
@@ -165,7 +165,7 @@ const ContactPage = () => {
           </InputWrapper>
         </form>
       </Container>
-    </>
+    </Layout>
   )
 }
 
