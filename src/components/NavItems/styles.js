@@ -10,6 +10,7 @@ export const ListItems = styled.li`
 
 export const ListWrapper = styled.ul`
   float: left;
+  font-weight: bold;
   margin: auto 0;
   @media (max-width: 767px) {
     display: none;

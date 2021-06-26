@@ -1,10 +1,14 @@
 const MenuItems = [
   {
-    title: 'About Us',
+    title: 'SHOP',
+    url: '/shop',
+  },
+  {
+    title: 'ABOUT US',
     url: '/about',
   },
   {
-    title: 'Contact',
+    title: 'CONTACT',
     url: '/contact',
   },
 ]
